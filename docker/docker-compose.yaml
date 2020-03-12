@@ -1,0 +1,49 @@
+version: '3.3'
+services:
+  nginx:
+    image: nginx:latest
+    container_name: simple_web-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ${NGINX_CONF}:/etc/nginx/conf.d
+      - ${DIRR_APP}:/var/www/data
+      - ${NGINX_LOGS}:/var/log/nginx
+    links:
+      - php
+
+  php:
+    build: ./php
+    container_name: simple_web-php-fpm
+    volumes:
+      - ${DIRR_APP}:/var/www/data
+    links:
+      - db
+
+  db:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    container_name: simple_web-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_USER=${DB_LOGIN}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - ./db:/var/lib/mysql
+
+  adminer:
+    image: adminer
+    container_name: simple_web-adminer
+    ports:
+      - "8080:8080"
+
+  composer:
+    build: ./composer
+    container_name: simple_web-composer
+    volumes:
+      - ${DIRR_APP}:/var/www
+    working_dir: /var/www
+    command: composer install
