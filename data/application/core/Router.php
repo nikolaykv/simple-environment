@@ -11,6 +11,7 @@ class Router
      * @var array
      */
     protected $routes = [];
+
     /**
      * @var array
      */
@@ -91,14 +92,13 @@ class Router
                     $instance->$action();
 
                 } else {
-                    echo 'Метода <b>' . $action . '</b> в этом контроллере не существует!!!';
+                   View::errorCode(404);
                 }
             } else {
-                echo 'Контроллер <b>' . $pathController . '</b> не существует!!!';
+                View::errorCode(404);
             }
         } else {
-            echo '<h1 style="text-align: center; margin-top: 50px; font-size: 2em; color: red;">404</h1><br />';
-            echo '<h2 style="text-align: center; margin-top: 20px; font-size: 1em; color: red;">Мы не знаем такого маршрута</h2>';
+            View::errorCode(404);
         }
     }
 }

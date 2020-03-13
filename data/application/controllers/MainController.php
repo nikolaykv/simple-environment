@@ -3,6 +3,7 @@
 namespace application\controllers;
 
 use application\core\Controller;
+use application\core\View;
 
 /**
  * Class MainController
@@ -14,18 +15,14 @@ class MainController extends Controller
      * Отдаст главную страницу
      */
     public function indexAction() {
-        echo 'Главная страница';
-
-        echo '<pre>';
-        var_dump($this->routesData);
-        echo '</pre>';
+        $this->viewData->renderViews('Главная страница');
     }
 
+    /**
+     * Отдаст страницу для задачи по телефонному справочнику
+     */
     public function telephoneDirectoryAction() {
-        echo 'Задача с телефонным справочником';
-
-        echo '<pre>';
-        var_dump($this->routesData);
-        echo '</pre>';
+        $this->viewData->pathForView = 'main/telephone-directory';
+        $this->viewData->renderViews('Страница для задачи по телефонному справочнику');
     }
 }

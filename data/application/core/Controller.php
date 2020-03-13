@@ -1,6 +1,9 @@
 <?php
 
 namespace application\core;
+
+use application\core\View;
+
 /**
  * Class Controller
  * @package application\core
@@ -10,9 +13,16 @@ abstract class Controller
     /**
      * @var
      *
-     * Пустая переменная для данных маршрута
+     * Данные маршрута
      */
     public $routesData;
+
+    /**
+     * @var \application\core\View
+     *
+     * Данные шаблона
+     */
+    public $viewData;
 
     /**
      * Controller constructor.
@@ -21,5 +31,10 @@ abstract class Controller
     public function __construct($allRoutes)
     {
         $this->routesData = $allRoutes;
+
+        $this->viewData = new View($allRoutes);
+
+        // Пример использования второго layout || Нужна проверка на существование такого метода
+        // $this->otherLayout();
     }
 }
