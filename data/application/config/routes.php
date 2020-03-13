@@ -9,13 +9,16 @@ return [
         'controller' => 'main',
         'action' => 'index'
     ],
-    'task-for-array/one-task' => [
-        'controller' => 'taskForArray',
+    'tasks/one-task' => [
+        'controller' => 'tasks',
         'action' => 'oneTask'
     ],
-
-    'task-for-database-tables/two-task' => [
-        'controller' => 'taskForDatabaseTables',
+    'tasks/two-task' => [
+        'controller' => 'tasks',
         'action' => 'twoTask'
-    ]
+    ],
+    'telephone-directory' => [
+        'controller' => 'main',
+        'action' => 'telephoneDirectory'
+    ],
 ];

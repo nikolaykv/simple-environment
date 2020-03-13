@@ -72,17 +72,33 @@ class Router
     {
         // Если есть такой роут
         if ($this->checkRoute()) {
-            // Путь до запускаемого контролера
-            $controller = 'application\controllers\\' . ucfirst($this->params['controller']) . 'Controller.php';
 
-            // Проверим существование данного класса и подключим его
-            if (class_exists($controller)) {
-                echo 'Окей';
+            // Путь до запускаемого контролера
+            $pathController = 'application\controllers\\' . ucfirst($this->params['controller']) . 'Controller';
+
+            // Проверим существование данного класса/контролера
+            if (class_exists($pathController)) {
+
+                // Получим имя метода контролера
+                $action = $this->params['action'] . 'Action';
+
+                // Если метод существует в контроллере
+                if (method_exists($pathController, $action)) {
+
+                    // Создать экземпляр класса/контролера || передать в базовый контроллер массив с данными машрута
+                    $instance = new $pathController($this->params);
+                    // И вызвать его action
+                    $instance->$action();
+
+                } else {
+                    echo 'Метода <b>' . $action . '</b> в этом контроллере не существует!!!';
+                }
             } else {
-                echo 'Данный <b>' . $controller . '</b> не существует!!!';
+                echo 'Контроллер <b>' . $pathController . '</b> не существует!!!';
             }
         } else {
-            echo '<h1 style="text-align: center; margin-top: 50px; font-size: 1em; color: red;">404 CODE</h1>';
+            echo '<h1 style="text-align: center; margin-top: 50px; font-size: 2em; color: red;">404</h1><br />';
+            echo '<h2 style="text-align: center; margin-top: 20px; font-size: 1em; color: red;">Мы не знаем такого маршрута</h2>';
         }
     }
 }

@@ -19,6 +19,13 @@ spl_autoload_register(function ($class) {
 
 session_start();
 
+// Инстанс маршрутизации
 $router = new Router;
+
+/**
+ * Метод экземпляра запустит создание
+ * нового инстанса пришедшего маршрута
+ * и вызовет пришедший action
+ */
 $router->runRoute();
 
