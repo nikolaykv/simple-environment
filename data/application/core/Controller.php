@@ -2,8 +2,6 @@
 
 namespace application\core;
 
-use application\core\View;
-
 /**
  * Class Controller
  * @package application\core
@@ -16,6 +14,8 @@ abstract class Controller
      * Данные маршрута
      */
     public $routesData;
+
+    public $model;
 
     /**
      * @var \application\core\View
@@ -36,5 +36,23 @@ abstract class Controller
 
         // Пример использования второго layout || Нужна проверка на существование такого метода
         // $this->otherLayout();
+
+        $this->model = $this->loadModel($allRoutes['controller']);
+    }
+
+    /**
+     * @param $name
+     * @return mixed
+     */
+    public function loadModel($name)
+    {
+        $pathForModel = 'application\models\\' . ucfirst($name);
+
+        if (class_exists($pathForModel))
+        {
+            return new $pathForModel();
+        } else {
+            View::errorCode(500);
+        }
     }
 }

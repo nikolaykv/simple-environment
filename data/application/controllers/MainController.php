@@ -1,9 +1,6 @@
 <?php
 
 namespace application\controllers;
-
-use application\core\View;
-use application\libs\DataBase;
 use application\core\Controller;
 
 /**
@@ -17,7 +14,6 @@ class MainController extends Controller
      */
     public function indexAction()
     {
-        //$dataBaseConnection = new DataBase;
         $this->viewData->renderViews('Главная страница');
     }
 

@@ -5,10 +5,20 @@ namespace application\libs;
 use PDO;
 use PDOException;
 
+/**
+ * Class DataBase
+ * @package application\libs
+ */
 class DataBase
 {
+    /**
+     * @var PDO
+     */
     protected $connection;
 
+    /**
+     * DataBase constructor.
+     */
     public function __construct()
     {
         $config = require 'application/config/config-database-connection.php';
@@ -28,18 +38,30 @@ class DataBase
         }
     }
 
-   public function query($sql)
+    /**
+     * @param $sql
+     * @return false|\PDOStatement
+     */
+    public function query($sql)
     {
         $query = $this->connection->query($sql);
         return $query;
     }
 
+    /**
+     * @param $sql
+     * @return array
+     */
     public function row($sql)
     {
         $result = $this->query($sql);
         return $result->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    /**
+     * @param $sql
+     * @return mixed
+     */
     public function column($sql)
     {
         $result = $this->query($sql);
