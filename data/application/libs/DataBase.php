@@ -21,9 +21,28 @@ class DataBase
                 $config['user'],
                 $config['password']
             );
+            
         } catch (PDOException $e) {
             print 'Ошибка подключения к базе: <b>' . $e->getMessage() . '</b>';
             die();
         }
+    }
+
+   public function query($sql)
+    {
+        $query = $this->connection->query($sql);
+        return $query;
+    }
+
+    public function row($sql)
+    {
+        $result = $this->query($sql);
+        return $result->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function column($sql)
+    {
+        $result = $this->query($sql);
+        return $result->fetchColumn();
     }
 }

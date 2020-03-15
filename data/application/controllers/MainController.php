@@ -17,7 +17,7 @@ class MainController extends Controller
      */
     public function indexAction()
     {
-        $dataBaseConnection = new DataBase;
+        //$dataBaseConnection = new DataBase;
         $this->viewData->renderViews('Главная страница');
     }
 
