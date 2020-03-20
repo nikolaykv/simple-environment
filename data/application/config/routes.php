@@ -22,7 +22,7 @@ return [
         'controller' => 'main',
         'action' => 'telephoneDirectory'
     ],
-    'adminer.php' => [
+    'adminer' => [
         'controller' => 'main',
         'action' => 'adminer'
     ],
