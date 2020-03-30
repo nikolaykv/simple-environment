@@ -6,5 +6,8 @@ use application\core\Model;
 
 class Main extends Model
 {
-    // Опишите здесь какой-нибудь метод
+    public function getAllNameAndIdCategory() {
+        $sql = $this->dataBase->row('SELECT category_id, name FROM category_description');
+        return $sql;
+    }
 }

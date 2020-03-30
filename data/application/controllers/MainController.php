@@ -14,7 +14,19 @@ class MainController extends Controller
      */
     public function indexAction()
     {
-        $this->viewData->renderViews('Главная страница');
+        // Запрос
+        $result = $this->model->getAllNameAndIdCategory();
+
+        // Сформировать массив результатов
+        $vars = [
+          'categories' => $result
+        ];
+
+        // Отдать данные в шаблон
+        $this->viewData->renderViews(
+            'Главная страница',
+            $vars)
+        ;
     }
 
     /**
