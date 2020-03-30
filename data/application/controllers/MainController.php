@@ -2,6 +2,8 @@
 
 namespace application\controllers;
 use application\core\Controller;
+use application\core\View;
+use application\models\Main;
 
 /**
  * Class MainController
@@ -18,15 +20,15 @@ class MainController extends Controller
         $result = $this->model->getAllNameAndIdCategory();
 
         // Сформировать массив результатов
-        $vars = [
-          'categories' => $result
-        ];
-
+        foreach ($result as $item) {
+            $vars['categories'][] = array(
+              'category-id' => $item['category_id'],
+              'name' => $item['name'],
+              'description' => strip_tags(html_entity_decode($item['description'])),
+            );
+        }
         // Отдать данные в шаблон
-        $this->viewData->renderViews(
-            'Главная страница',
-            $vars)
-        ;
+        $this->viewData->renderViews('Главная страница', $vars);
     }
 
     /**
@@ -44,5 +46,13 @@ class MainController extends Controller
     public function adminerAction()
     {
         $this->viewData->redirect('http://' . $_SERVER['SERVER_NAME'] . ':8080');
+    }
+
+    /**
+     *
+     */
+    public function liveReloadAction()
+    {
+        $this->model->liveReloadCategory($_POST['start']);
     }
 }

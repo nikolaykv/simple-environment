@@ -7,7 +7,7 @@
 return [
     '' => [
         'controller' => 'main',
-        'action' => 'index'
+        'action' => 'index',
     ],
 
     'tasks/one-task' => [
@@ -25,5 +25,9 @@ return [
     'adminer' => [
         'controller' => 'main',
         'action' => 'adminer'
+    ],
+    'live-reload' => [
+        'controller' => 'main',
+        'action' => 'liveReload'
     ],
 ];

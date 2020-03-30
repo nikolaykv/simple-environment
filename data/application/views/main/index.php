@@ -1,7 +1,11 @@
+
+<!-- caption page START -->
 <h1 class="text-center mt-5 mb-5">
     Главная страница
 </h1>
+<!-- caption page END -->
 
+<!-- Навигация START -->
 <div class="container-fluid mb-5">
     <ul class="nav nav justify-content-center nav-pills">
         <li class="nav-item">
@@ -18,24 +22,21 @@
         </li>
     </ul>
 </div>
+<!-- Навигация END -->
 
-
-
-
-
-
-<div class="w-75 m-auto">
+<!-- Форма и вывод категорий START -->
+<div class="ml-5 mr-5">
     <h2>
         Получить катекорию по идентификатору:
     </h2>
-    <form action="#" class="mb-5">
+    <form class="form" action="#" method="POST" class="mb-5">
         <div class="form-group">
             <label for="category">Введите имя категории:</label>
-            <input type="text" class="form-control" id="category">
+            <input type="text" class="form-control" id="category" name="category">
         </div>
-        <button type="submit" class="btn btn-primary">Отправить</button>
+        <button type="submit" class="btn btn-primary" name="enter">Отправить</button>
     </form>
-    <h2>
+   <h2 class="mt-5">
         Все существующие категории
     </h2>
     <table class="table table-hover">
@@ -43,20 +44,27 @@
         <tr>
             <th>Идентификатор категории: </th>
             <th>Имя: </th>
+            <th>Описание: </th>
         </tr>
         </thead>
-        <tbody>
+        <tbody class="custom-tbody">
+        <?php if ($categories): ?>
         <?php foreach ($categories as $item): ?>
         <tr>
             <td>
-                <?=$item['category_id']; ?>
+                <?=$item['category-id']; ?>
             </td>
             <td>
                 <?=$item['name']; ?>
             </td>
+            <td>
+                <?=$item['description']; ?>
+            </td>
         </tr>
         <?php endforeach; ?>
+        <?php endif; ?>
         </tbody>
     </table>
+   <button type="button" class="mb-5 btn btn-primary ajax-btn">Показать еще</button>
 </div>
-
+<!-- Форма и вывод категорий END -->
