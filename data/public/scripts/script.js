@@ -5,15 +5,16 @@ $(document).ready(function () {
 
     $('.ajax-btn').click(function () {
         $.ajax({
-            url: 'live-reload',
+            url: 'api/index',
             method: 'POST',
             data: {'start': start},
+            cache: false,
             beforeSend: function () {
                 inProgress = true;
             }
         }).done(function (data) {
-            //console.log(data)
-            data = jQuery.parseJSON(data);
+            data = JSON.parse(data);
+            console.log(data);
             if (data.length > 0) {
                 $.each(data, function (index, data) {
                     $('.custom-tbody').append(
@@ -29,27 +30,4 @@ $(document).ready(function () {
             };
         });
     });
-
-    /*$('.form').submit(function(event) {
-        var json;
-
-        console.log(json)
-        event.preventDefault();
-        $.ajax({
-            type: $(this).attr('method'),
-            url: $(this).attr('action'),
-            data: new FormData(this),
-            contentType: false,
-            cache: false,
-            processData: false,
-            success: function(result) {
-                json = jQuery.parseJSON(result);
-                if (json.url) {
-                    window.location.href = json.url;
-                } else {
-                    alert(json.status + ' - ' + json.message);
-                }
-            },
-        });
-    });*/
 });

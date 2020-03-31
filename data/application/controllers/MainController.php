@@ -48,11 +48,4 @@ class MainController extends Controller
         $this->viewData->redirect('http://' . $_SERVER['SERVER_NAME'] . ':8080');
     }
 
-    /**
-     *
-     */
-    public function liveReloadAction()
-    {
-        $this->model->liveReloadCategory($_POST['start']);
-    }
 }

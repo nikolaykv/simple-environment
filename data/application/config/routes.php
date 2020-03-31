@@ -26,8 +26,8 @@ return [
         'controller' => 'main',
         'action' => 'adminer'
     ],
-    'live-reload' => [
-        'controller' => 'main',
-        'action' => 'liveReload'
+    'api/index' => [
+        'controller' => 'api',
+        'action' => 'index'
     ],
 ];
