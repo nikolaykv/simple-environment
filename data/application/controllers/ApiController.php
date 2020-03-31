@@ -3,8 +3,16 @@
 namespace application\controllers;
 use application\core\Controller;
 
+/**
+ * Class ApiController
+ * @package application\controllers
+ */
 class ApiController extends Controller
 {
+    /**
+     * Для ajax запроса категорий на домащней странице
+     * в таблицу
+     */
     public function indexAction()
     {
         if (isset($_POST["start"])) {
@@ -13,5 +21,16 @@ class ApiController extends Controller
             $this->viewData->redirect('/');
         }
         $this->model->liveReloadCategory($start);
+    }
+
+    /**
+     * ajax выборка категории по id
+     */
+    public function getAjaxCategoryByIdAction()
+    {
+        if (!isset($_POST["category"])) {
+            $this->viewData->redirect('/');
+        }
+        $this->model->getCategoryById($_POST['category']);
     }
 }

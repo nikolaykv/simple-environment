@@ -30,4 +30,8 @@ return [
         'controller' => 'api',
         'action' => 'index'
     ],
+    'api/get-ajax-category-by-id' => [
+        'controller' => 'api',
+        'action' => 'getAjaxCategoryById'
+    ],
 ];

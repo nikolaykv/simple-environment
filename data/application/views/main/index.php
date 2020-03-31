@@ -29,13 +29,32 @@
     <h2>
         Получить катекорию по идентификатору:
     </h2>
-    <form class="form" action="#" method="POST" class="mb-5">
+
+    <form class="form" action="api/get-ajax-category-by-id" method="POST" class="mb-5">
         <div class="form-group">
             <label for="category">Введите имя категории:</label>
             <input type="text" class="form-control" id="category" name="category">
         </div>
         <button type="submit" class="btn btn-primary" name="enter">Отправить</button>
     </form>
+
+    <div class="mt-5 mb-5 result">
+        <h2>
+            Ваш результат:
+        </h2>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Идентификатор категории: </th>
+                <th>Имя: </th>
+                <th>Описание: </th>
+            </tr>
+            </thead>
+            <tbody class="custom-tbody-result">
+            </tbody>
+        </table>
+    </div>
+
    <h2 class="mt-5">
         Все существующие категории
     </h2>
