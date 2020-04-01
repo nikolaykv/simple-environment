@@ -1,7 +1,6 @@
 <?php
 
 namespace application\controllers;
-
 use application\core\Controller;
 
 /**
@@ -13,19 +12,25 @@ class MainController extends Controller
     /**
      * Отдаст главную страницу
      */
-    public function indexAction() {
-        echo 'Главная страница';
-
-        echo '<pre>';
-        var_dump($this->routesData);
-        echo '</pre>';
+    public function indexAction()
+    {
+        $this->viewData->renderViews('Главная страница');
     }
 
-    public function telephoneDirectoryAction() {
-        echo 'Задача с телефонным справочником';
+    /**
+     * Отдаст страницу для задачи по телефонному справочнику
+     */
+    public function telephoneDirectoryAction()
+    {
+        $this->viewData->pathForView = 'main/telephone-directory';
+        $this->viewData->renderViews('Страница для задачи по телефонному справочнику');
+    }
 
-        echo '<pre>';
-        var_dump($this->routesData);
-        echo '</pre>';
+    /**
+     * Перенаправит на adminer
+     */
+    public function adminerAction()
+    {
+        $this->viewData->redirect('http://' . $_SERVER['SERVER_NAME'] . ':8080');
     }
 }

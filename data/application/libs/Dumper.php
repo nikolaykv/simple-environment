@@ -3,6 +3,9 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
+/**
+ * @param $str
+ */
 function debug($str)
 {
     echo '<pre>';

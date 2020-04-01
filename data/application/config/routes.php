@@ -9,6 +9,7 @@ return [
         'controller' => 'main',
         'action' => 'index'
     ],
+
     'tasks/one-task' => [
         'controller' => 'tasks',
         'action' => 'oneTask'
@@ -20,5 +21,9 @@ return [
     'telephone-directory' => [
         'controller' => 'main',
         'action' => 'telephoneDirectory'
+    ],
+    'adminer' => [
+        'controller' => 'main',
+        'action' => 'adminer'
     ],
 ];
