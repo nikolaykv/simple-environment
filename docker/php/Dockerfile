@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install pdo_mysql
 
 ADD php.ini /usr/local/etc/php/conf.d/40-custom.ini
-WORKDIR /var/www/backend
+WORKDIR /var/www/data
 RUN deluser www-data
 RUN groupadd -g 1000 www-data
 RUN useradd -u 1000 -ms /bin/bash -g www-data www-data

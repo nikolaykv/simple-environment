@@ -2,3 +2,6 @@
 
 docker/db/**/*
 docker/nginx/logs/**/*
+
+data/vendor/**/*
+data/composer.lock

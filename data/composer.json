@@ -1,0 +1,15 @@
+{
+  "name": "custom/simple-environment",
+  "description": "Simple custom php framework",
+  "license": "top-secret",
+  "authors": [
+    {
+      "name": "Nikolai Kvasov",
+      "email": "kvasov1992@inbox.ru"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "illuminate/database": "7.0.0"
+  }
+}
