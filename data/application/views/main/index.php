@@ -19,3 +19,11 @@
         <a href="telephone-directory">Задача с телефонным справочником</a>
     </li>
 </ul>
+
+<pre>
+<?php
+foreach ($vars as $item) {
+    var_dump($item);
+}
+?>
+</pre>

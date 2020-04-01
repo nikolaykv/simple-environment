@@ -1,7 +1,7 @@
 <?php
 
-// Дебаг
-require 'application/libs/Dumper.php';
+require 'vendor/autoload.php';
+require 'application/libs/Dumper.php'; // Дебаг
 
 use application\core\Router;
 

@@ -1,6 +1,6 @@
 <?php
 
-// Массив с данными дял подключения к БД
+// Массив с данными для подключения к БД
 $config = require '../config/config-database-connection.php';
 
 // Composer autoload
