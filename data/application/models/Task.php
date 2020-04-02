@@ -4,7 +4,7 @@ namespace application\models;
 
 use application\core\Model;
 
-class Tasks extends Model
+class Task extends Model
 {
    // Опишите здесь какой-нибудь метод
 }

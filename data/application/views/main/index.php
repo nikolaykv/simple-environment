@@ -12,13 +12,13 @@
             <a class="nav-link active" href="/">Главная</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="tasks/one-task">Первый таск</a>
+            <a class="nav-link" href="task/worker">Сотрудники</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="tasks/two-task">Второй таск</a>
+            <a class="nav-link" href="task/department">Сотрудники по отделам</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="telephone-directory">Задача с телефонным справочником</a>
+            <a class="nav-link" href="task/phone-directory">Телефонная книга</a>
         </li>
     </ul>
 </div>

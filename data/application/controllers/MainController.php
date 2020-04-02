@@ -30,16 +30,6 @@ class MainController extends Controller
         // Отдать данные в шаблон
         $this->viewData->renderViews('Главная страница', $vars);
     }
-
-    /**
-     * Отдаст страницу для задачи по телефонному справочнику
-     */
-    public function telephoneDirectoryAction()
-    {
-        $this->viewData->pathForView = 'main/telephone-directory';
-        $this->viewData->renderViews('Страница для задачи по телефонному справочнику');
-    }
-
     /**
      * Перенаправит на adminer
      */
@@ -47,4 +37,14 @@ class MainController extends Controller
     {
         $this->viewData->redirect('http://' . $_SERVER['SERVER_NAME'] . ':8080');
     }
+
+    /**
+     *  Позволит подключить другой общий шаблон
+     *  Можно использовать, например для админ панели
+     */
+     /*public function otherLayout()
+    {
+        $this->viewData->commonLayout = 'custom';
+    }*/
+
 }

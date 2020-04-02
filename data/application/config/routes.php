@@ -9,23 +9,24 @@ return [
         'controller' => 'main',
         'action' => 'index',
     ],
-
-    'tasks/one-task' => [
-        'controller' => 'tasks',
-        'action' => 'oneTask'
-    ],
-    'tasks/two-task' => [
-        'controller' => 'tasks',
-        'action' => 'twoTask'
-    ],
-    'telephone-directory' => [
-        'controller' => 'main',
-        'action' => 'telephoneDirectory'
-    ],
     'adminer' => [
         'controller' => 'main',
         'action' => 'adminer'
     ],
+
+    'task/worker' => [
+        'controller' => 'task',
+        'action' => 'worker'
+    ],
+    'task/department' => [
+        'controller' => 'task',
+        'action' => 'department'
+    ],
+    'task/phone-directory' => [
+        'controller' => 'task',
+        'action' => 'phoneDirectory'
+    ],
+
     'api/index' => [
         'controller' => 'api',
         'action' => 'index'
