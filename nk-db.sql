@@ -321,7 +321,7 @@ CREATE TABLE `product` (
   `price` decimal(15,4) NOT NULL DEFAULT '0.0000',
   PRIMARY KEY (`product_id`),
   KEY `superdruid_p_cat` (`product_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `product` (`product_id`, `model`, `price`) VALUES
 (11254,	'NG-301N',	26200.0000),

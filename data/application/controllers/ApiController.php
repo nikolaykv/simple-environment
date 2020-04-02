@@ -34,8 +34,8 @@ class ApiController extends Controller
         $this->model->getCategoryById($_POST['category']);
     }
 
-    public function addDummyDataAction()
+    /*public function addDummyDataAction()
     {
         echo 'TEST';
-    }
+    }*/
 }

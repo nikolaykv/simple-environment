@@ -35,8 +35,4 @@ return [
         'controller' => 'api',
         'action' => 'getAjaxCategoryById'
     ],
-    'api/add-dummy-data' => [
-        'controller' => 'api',
-        'action' => 'addDummyData'
-    ],
 ];

@@ -69,5 +69,10 @@ class DataBase
         return $result->fetchColumn();
     }
 
+    public function insertTable($sql)
+    {
+        $query = $this->connection->query($sql);
+    }
+
 
 }
