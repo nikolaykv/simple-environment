@@ -68,11 +68,4 @@ class DataBase
         $result = $this->query($sql);
         return $result->fetchColumn();
     }
-
-    public function insertTable($sql)
-    {
-        $query = $this->connection->query($sql);
-    }
-
-
 }

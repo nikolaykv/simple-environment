@@ -15,6 +15,6 @@ for ($i = 0; $i < 50; $i++) {
         'firstname' => $seed[0],
         'lastname' => $seed[1],
         'middlename' => $seed[2],
-        'department_id' => $faker->unique()->numberBetween(1, 100),
+        'department_id' => $faker->numberBetween(3, 10),
     ]);
 }

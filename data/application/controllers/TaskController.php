@@ -12,13 +12,22 @@ class TaskController extends Controller
     public function workerAction()
     {
         $this->viewData->pathForView = 'task/worker';
+
         $this->viewData->renderViews('Страница для вывода сотрудников');
     }
 
     public function departmentAction()
     {
         $this->viewData->pathForView = 'task/department';
-        $this->viewData->renderViews('Страница для вывода сотрудников по отделу');
+        $department = $this->model->getDepartmentName();
+
+        foreach ($department as $item) {
+            $vars[] = array(
+                'name' => $item['name'],
+                'count-workers' => $item['count_workers']
+            );
+        }
+        $this->viewData->renderViews('Страница для вывода сотрудников по отделу', $vars);
     }
 
     /**
