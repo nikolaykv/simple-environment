@@ -6,16 +6,39 @@ use application\core\Controller;
 use application\core\View;
 
 
+/**
+ * Class TaskController
+ * @package application\controllers
+ */
 class TaskController extends Controller
 {
 
+    /**
+     * Вернет названия отдела и id сотрудников отдела
+     */
     public function workerAction()
     {
         $this->viewData->pathForView = 'task/worker';
+        $workers = $this->model->getIdOfDepartmnetWorkers();
 
-        $this->viewData->renderViews('Страница для вывода сотрудников');
+        // Рассортировать массив в соотвествии с задачей
+        $i = 0;
+        while ($i < count($workers)) {
+            switch ($workers[$i]['department_id']) {
+                case $workers[$i]['department_id']:
+                    $vars[$workers[$i]['name']][] = $workers[$i]['worker_id'];
+                    break;
+            }
+            $i++;
+        }
+
+       $this->viewData->renderViews('Страница для вывода идентификаторов сотрудников по отделу', $vars);
     }
 
+    /**
+     * Вернёт названия отделов, в которых
+     * пять и более сотрудников
+     */
     public function departmentAction()
     {
         $this->viewData->pathForView = 'task/department';

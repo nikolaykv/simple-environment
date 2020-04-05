@@ -7,7 +7,7 @@
 <div class="container-fluid mb-5">
     <ul class="nav nav justify-content-center nav-pills">
         <li class="nav-item">
-            <a class="nav-link active" href="/">Главная</a>
+            <a class="nav-link" href="/">Главная</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="worker">Сотрудники</a>
@@ -16,7 +16,7 @@
             <a class="nav-link" href="department">Сотрудники по отделам</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="phone-directory">Телефонная книга</a>
+            <a class="nav-link active" href="phone-directory">Телефонная книга</a>
         </li>
     </ul>
 </div>

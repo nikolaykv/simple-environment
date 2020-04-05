@@ -1,5 +1,5 @@
 <h1 class="text-center mt-5 mb-5">
-    Страница для вывода сотрудников
+    Страница для вывода идентификаторов сотрудников по отделу
 </h1>
 
 <!-- Навигация START -->
@@ -30,17 +30,25 @@
         <tr>
             <th class="text-center">Департамент:</th>
             <th class="text-center">Идентификатор сотрудников:</th>
+            <th class="text-center">Итого:</th>
         </tr>
         </thead>
-        <tbody class="custom-tbody">
+       <tbody class="custom-tbody">
+        <?php if ($vars): ?>
+        <?php foreach ($vars as $key => $value): ?>
         <tr>
             <td class="text-center">
-                test
+                <?=$key; ?>
             </td>
             <td class="text-center">
-                test
+               <?=implode(", ", $value); ?>
+            </td>
+            <td class="text-center">
+                <?=count($value); ?>
             </td>
         </tr>
+        <?php endforeach; ?>
+        <?php endif; ?>
         </tbody>
     </table>
 </div>
