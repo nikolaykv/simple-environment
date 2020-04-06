@@ -1,6 +1,6 @@
 
 <h1 class="text-center mt-5 mb-5">
-    Телефонная книга
+    Телефоный справочник
 </h1>
 
 <!-- Навигация START -->
@@ -16,7 +16,7 @@
             <a class="nav-link" href="department">Сотрудники по отделам</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="phone-directory">Телефонная книга</a>
+            <a class="nav-link active" href="phone-directory">Телефоный справочник</a>
         </li>
     </ul>
 </div>
@@ -24,7 +24,7 @@
 
 <div class="container">
     <h2 class="mt-5 text-center mb-5">
-        Предлагаемая стурктура таблиц
+        Предлагаемая стурктура таблиц (связь многоие ко многоим)
     </h2>
 
 </div>

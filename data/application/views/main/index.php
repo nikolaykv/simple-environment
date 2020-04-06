@@ -18,7 +18,7 @@
             <a class="nav-link" href="task/department">Сотрудники по отделам</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="task/phone-directory">Телефонная книга</a>
+            <a class="nav-link" href="task/phone-directory">Телефоный справочник</a>
         </li>
     </ul>
 </div>

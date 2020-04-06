@@ -17,7 +17,7 @@
             <a class="nav-link active" href="department">Отделы</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="phone-directory">Телефонная книга</a>
+            <a class="nav-link" href="phone-directory">Телефоный справочник</a>
         </li>
     </ul>
 </div>
