@@ -34,7 +34,6 @@ class Task extends Model
                                         INNER JOIN department ON worker.department_id=department.id
                                         GROUP BY worker.id
                                         ");
-
        return $sql;
    }
 }

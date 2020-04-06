@@ -6,9 +6,7 @@ use Illuminate\Database\Schema\Blueprint;
 
 Capsule::schema()->create('address_data', function (Blueprint $table) {
     $table->increments('id')->comment('Идентификатор адресата');
-    $table->string('firstname', 100)->comment('Имя адресата');
-    $table->string('lastname', 100)->comment('Фамилия адресата');
-    $table->string('middlename', 100)->comment('Отчество адресата');
+    $table->string('user_name', 100)->comment('ФИО адресата');
     $table->engine = 'InnoDB';
     $table->charset = 'utf8';
 });

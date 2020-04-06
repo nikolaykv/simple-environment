@@ -6,12 +6,9 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 
 $faker = Factory::create('ru_RU');
 
-    for ($i = 0; $i < 20; $i++) {
+    for ($i = 0; $i < 30; $i++) {
         $addressData = $faker->unique()->name();
-        $seed = explode(" ", $addressData);
         Capsule::table('address_data')->insert([
-            'firstname' => $seed[0],
-            'lastname' => $seed[1],
-            'middlename' => $seed[2],
+            'user_name' => $faker->unique()->name(),
         ]);
     }
