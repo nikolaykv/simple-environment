@@ -4,7 +4,6 @@ require 'vendor/autoload.php';
 require 'application/libs/Dumper.php'; // Дебаг
 
 use application\core\Router;
-
 /**
  * @param $class
  * Функция автозагрузчик классов
@@ -28,4 +27,3 @@ $router = new Router;
  * и вызовет пришедший action
  */
 $router->runRoute();
-

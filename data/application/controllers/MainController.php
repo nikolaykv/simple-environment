@@ -4,6 +4,7 @@ namespace application\controllers;
 use application\core\Controller;
 use application\core\View;
 use application\models\Main;
+use application\core\Cookie;
 
 /**
  * Class MainController
@@ -27,6 +28,13 @@ class MainController extends Controller
               'description' => strip_tags(html_entity_decode($item['description'])),
             );
         }
+
+        // pattern singleton class Cookie
+        $cookie = Cookie::instance();
+
+        // Можно изменить время жизни cookie (по умолчанию 1 год)
+        $cookie->setCookie('TEST', 'testValue', 3600);
+
         // Отдать данные в шаблон
         $this->viewData->renderViews('Главная страница', $vars);
     }
