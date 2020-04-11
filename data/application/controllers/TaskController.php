@@ -62,4 +62,31 @@ class TaskController extends Controller
         $this->viewData->pathForView = 'task/phone-directory';
         $this->viewData->renderViews('Страница телефонной книги');
     }
+
+    /**
+     * Простая регулярка на точное соотвествие пришедших из формы тегов
+     */
+    public function parseHtmlAction()
+    {
+        $this->viewData->pathForView = 'task/parse-html';
+
+        if (!empty($_POST['validator'])) {
+            $res = preg_match('#^<a><div></div></a><span></span>$#', $_POST['validator']);
+            if ($res == true) {
+                $vars = array(
+                 'success' => 'Валидно в рамках задачи'
+                );
+            } else {
+                $vars = array(
+                 'unsuccess' => 'Не валидно в рамках задачи!!!'
+                );
+            }
+        } else {
+            $vars = array(
+                'other' =>'Заполните и отправьте форму'
+            );
+        }
+
+        $this->viewData->renderViews('Страница для валидации разметки', $vars);
+    }
 }

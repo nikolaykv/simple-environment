@@ -20,6 +20,9 @@
         <li class="nav-item">
             <a class="nav-link" href="task/phone-directory">Телефоный справочник</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="task/parse-html">Валидация разметки</a>
+        </li>
     </ul>
 </div>
 <!-- Навигация END -->

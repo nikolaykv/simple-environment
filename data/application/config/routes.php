@@ -27,6 +27,11 @@ return [
         'action' => 'phoneDirectory'
     ],
 
+    'task/parse-html' => [
+        'controller' => 'task',
+        'action' => 'parseHtml'
+    ],
+
     'api/index' => [
         'controller' => 'api',
         'action' => 'index'
